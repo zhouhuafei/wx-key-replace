@@ -1,0 +1,30 @@
+{
+  "name": "wx-key-replace",
+  "version": "1.0.0",
+  "description": "> 批量替换wx:key",
+  "main": "./dist/index.js",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "bin": {
+    "wx-key-replace": "./bin/index.js"
+  },
+  "scripts": {
+    "build": "tsc --p tsconfig.json",
+    "watch": "npm run build -- --watch",
+    "prepare": "npm run build",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouhuafei/wx-key-replace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhouhuafei/wx-key-replace/issues"
+  },
+  "homepage": "https://github.com/zhouhuafei/wx-key-replace#readme"
+}
