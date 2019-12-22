@@ -2,19 +2,19 @@
 > 批量替换wx:key的值
 
 # 使用方式
-1. 在项目根目录新建`wx-key-replace.json`文件。
+1. 在项目根目录新建`wx-key-replace.js`文件。
 1. 填入以下配置。
-```json
-{
-  "files": "./src/**/**.wxml",
-  "replace": [
+```javascript
+module.exports = {
+  files: `./src/**/**.wxml`,
+  replace: [
     {
-      "source":"{{index}}",
-      "target":"index"
+      source: `wx:key="{{index}}"`,
+      target: `wx:key="index"`
     },
     {
-      "source":"{{index2}}",
-      "target":"index2"
+      source: `wx:key="{{index2}}"`,
+      target: `wx:key="index2"`
     }
   ]
 }
