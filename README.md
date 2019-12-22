@@ -2,8 +2,8 @@
 > 批量替换wx:key的值
 
 # 使用方式
-* 在项目根目录新建`wx-key-replace.json`文件。
-* 填入一下配置。
+1. 在项目根目录新建`wx-key-replace.json`文件。
+1. 填入以下配置。
 ```json
 {
   "files": "./src/**/**.wxml",
