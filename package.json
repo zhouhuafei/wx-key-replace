@@ -1,7 +1,7 @@
 {
   "name": "wx-key-replace",
   "version": "1.0.0",
-  "description": "> 批量替换wx:key",
+  "description": "批量替换wx:key的值",
   "main": "./dist/index.js",
   "files": [
     "bin",

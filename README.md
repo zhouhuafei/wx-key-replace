@@ -1,5 +1,5 @@
 # 功能说明
-> 批量替换wx:key
+> 批量替换wx:key的值
 
 # 使用方式
 * 在项目根目录新建`wx-key-replace.json`文件。
