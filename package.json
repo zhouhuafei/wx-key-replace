@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/zhouhuafei/wx-key-replace#readme",
   "devDependencies": {
+    "@types/node": "^12.12.21",
     "typescript": "^3.7.4"
   }
 }

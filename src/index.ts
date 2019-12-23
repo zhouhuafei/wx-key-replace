@@ -3,5 +3,5 @@ export default (opts) => {
     console.log('参数有误')
     return
   }
-  console.log('123')
+  console.log('opts', opts)
 }
