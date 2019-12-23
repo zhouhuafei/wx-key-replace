@@ -11,8 +11,12 @@ export default (opts) => {
     if (err) console.log('err', err)
     console.log('files', files)
     files.forEach(file => {
-      const fileContent = fs.readFileSync(file, {encoding: 'utf-8'})
+      let fileContent = fs.readFileSync(file, { encoding: 'utf-8' })
+      opts.replace.forEach(v => {
+        fileContent = fileContent.replace(new RegExp(v.source), v.target)
+      })
       console.log('fileContent', fileContent)
+      fs.writeFileSync(file, fileContent, { encoding: 'utf-8' })
     })
   })
 }

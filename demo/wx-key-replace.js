@@ -1,13 +1,10 @@
 module.exports = {
   files: `./src/**/**.wxml`,
+  autoRegexp: `wx:key="{{\\s*(.*)\\s*}}"`,
   replace: [
     {
-      source: `wx:key="{{index}}"`,
+      source: `wx:key="{{\\s*(.*)\\s*}}"`,
       target: `wx:key="index"`
-    },
-    {
-      source: `wx:key="{{index2}}"`,
-      target: `wx:key="index2"`
     }
   ]
 }
