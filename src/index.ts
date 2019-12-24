@@ -27,7 +27,8 @@ export default (opts) => {
           str.match(new RegExp(newStr))
           const source = newStr
           const arrSplit = RegExp.$1.split('.')
-          const target = arrSplit[arrSplit.length - 1]
+          const target = v.replace(RegExp.$1, arrSplit[arrSplit.length - 1])
+          console.log(source, target)
           if (!result.find(v => v.source === source)) result.push({ source, target })
         })
         result.forEach(v => {
