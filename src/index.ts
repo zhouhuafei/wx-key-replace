@@ -1,6 +1,5 @@
 const fs = require('fs')
 const glob = require('glob')
-const autoRegexp = new RegExp(`wx:key="{{\\s*(.*?)\\s*}}"`)
 
 export default (opts) => {
   if (!opts || !opts.files || !opts.replace || !opts.replace.length) {
@@ -18,8 +17,18 @@ export default (opts) => {
           fileContent = fileContent.replace(new RegExp(v.source, 'g'), v.target)
         })
       } else {
-        const arr = fileContent.match(autoRegexp)
-        console.log('match arr', arr)
+        const str = fileContent
+        const reg = 'wx:key="{{\\s*(.*?)\\s*}}"'
+        const arr = str.match(new RegExp(reg, 'g'))
+        arr.forEach(v => {
+          v.match(new RegExp(reg))
+          const newStr = v.replace(RegExp.$1, `(${RegExp.$1})`)
+          str.match(new RegExp(newStr))
+          const source = newStr
+          const arrSplit = RegExp.$1.split('.')
+          const target = v.replace(RegExp.$1, arrSplit[arrSplit.length - 1])
+          console.log(source, target)
+        })
       }
       console.log('fileContent', fileContent)
       fs.writeFileSync(file, fileContent, { encoding: 'utf-8' })
