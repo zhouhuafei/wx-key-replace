@@ -7,14 +7,14 @@
 ```javascript
 module.exports = {
   files: `./src/**/**.wxml`,
-  replace: [
+  replace: [ // 无此项或此项为空数组，则开启自动匹配模式
     {
       source: `wx:key="{{index}}"`,
       target: `wx:key="index"`
     },
     {
-      source: `wx:key="{{index2}}"`,
-      target: `wx:key="index2"`
+      source: `wx:key="{{ item.id }}"`,
+      target: `wx:key="id"`
     }
   ]
 }
