@@ -6,10 +6,10 @@ export default (opts) => {
     console.log('参数有误')
     return
   }
-  console.log('opts', opts)
+  // console.log('opts', opts)
   glob(opts.files, (err, files) => {
     if (err) console.log('err', err)
-    console.log('files', files)
+    // console.log('files', files)
     files.forEach(file => {
       let fileContent = fs.readFileSync(file, { encoding: 'utf-8' })
       if (opts.replace && opts.replace.length) {
