@@ -2,7 +2,7 @@ const fs = require('fs')
 const glob = require('glob')
 
 export default (opts) => {
-  if (!opts || !opts.files || !opts.replace || !opts.replace.length) {
+  if (!opts || !opts.files) {
     console.log('参数有误')
     return
   }
