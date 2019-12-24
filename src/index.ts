@@ -20,6 +20,7 @@ export default (opts) => {
         const str = fileContent
         const reg = 'wx:key="{{\\s*(.*?)\\s*}}"'
         const arr = str.match(new RegExp(reg, 'g'))
+        const result = []
         arr.forEach(v => {
           v.match(new RegExp(reg))
           const newStr = v.replace(RegExp.$1, `(${RegExp.$1})`)
@@ -27,10 +28,14 @@ export default (opts) => {
           const source = newStr
           const arrSplit = RegExp.$1.split('.')
           const target = v.replace(RegExp.$1, arrSplit[arrSplit.length - 1])
-          console.log(source, target)
+          if (!result.find(v => v.source === source)) result.push({ source, target })
         })
+        result.forEach(v => {
+          fileContent = fileContent.replace(new RegExp(v.source, 'g'), v.target)
+        })
+        // console.log('result', result)
+        // console.log('fileContent', fileContent)
       }
-      console.log('fileContent', fileContent)
       fs.writeFileSync(file, fileContent, { encoding: 'utf-8' })
     })
   })
