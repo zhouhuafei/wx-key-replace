@@ -33,7 +33,7 @@ export default (opts) => {
         result.forEach(v => {
           fileContent = fileContent.replace(new RegExp(v.source, 'g'), v.target)
         })
-        console.log('result', result)
+        // console.log('result', result)
         // console.log('fileContent', fileContent)
       }
       fs.writeFileSync(file, fileContent, { encoding: 'utf-8' })
