@@ -1,8 +1,8 @@
 const fs = require('fs')
 const glob = require('glob')
 
-export default (opts) => {
-  if (!opts || !opts.files) {
+module.exports = (opts) => {
+  if (!opts || !opts.files || !opts.fileContent) {
     console.log('参数有误')
     return
   }
@@ -12,6 +12,7 @@ export default (opts) => {
     // console.log('files', files)
     files.forEach(file => {
       let fileContent = fs.readFileSync(file, { encoding: 'utf-8' })
+      if (opts.fileContent) fileContent = opts.fileContent
       if (opts.replace && opts.replace.length) {
         opts.replace.forEach(v => {
           fileContent = fileContent.replace(new RegExp(v.source, 'g'), v.target)

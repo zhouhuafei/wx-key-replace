@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import * as path from 'path'
+const path = require('path')
 
-import fn from '../index'
+const fn = require('../index')
 
 try {
   const opts = require(path.resolve('./wx-key-replace.js'))
