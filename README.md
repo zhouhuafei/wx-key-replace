@@ -1,9 +1,9 @@
 # 功能说明
 > 批量替换wx:key的值。
-* 项目中错误使用了wx:key。
-* 错误案例：wx:key="{{index}}"。
+* 项目中错误使用了`wx:key`。
+* 错误案例：`wx:key="{{index}}"`。
 * 替换为。
-* 正确案例：wx:key="index"。
+* 正确案例：`wx:key="index"`。
 
 # 使用方式1
 1. 在项目根目录新建`wx-key-replace.js`文件。
