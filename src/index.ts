@@ -2,7 +2,7 @@ const fs = require('fs')
 const glob = require('glob')
 
 module.exports = (opts) => {
-  if (!opts || !opts.files || !opts.fileContent) {
+  if (!opts || (!opts.files && !opts.fileContent)) {
     console.log('参数有误')
     return
   }
