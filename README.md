@@ -6,7 +6,7 @@
 * 正确案例：`wx:key="index"`。
 
 # 使用方式1
-1. 在项目根目录新建`wx-key-replace.js`文件。
+1. 在项目根目录新建`wx-key-replace.config.js`文件。
 1. 填入以下配置。
 ```javascript
 module.exports = {
