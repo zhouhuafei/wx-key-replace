@@ -19,6 +19,7 @@ module.exports = {
   ]
 }
 ```
+1. 运行：`npx wx-key-replace`。
 
 # 字段说明
 * `files`：需要被替换的文件。
